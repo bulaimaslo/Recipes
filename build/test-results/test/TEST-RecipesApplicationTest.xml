@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="RecipesApplicationTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2021-07-16T19:54:03" hostname="LAPTOP-PRCAS73I" time="8.593">
+  <properties/>
+  <testcase name="start" classname="RecipesApplicationTest" time="8.593">
+    <failure message="java.lang.AssertionError: Wrong answer in test #9&#10;&#10;GET /api/recipe/1 should respond with status code 200, responded: 404&#10;&#10;Response body:&#10;{&quot;timestamp&quot;:&quot;2021-07-16T19:54:11.573+00:00&quot;,&quot;status&quot;:404,&quot;error&quot;:&quot;Not Found&quot;,&quot;message&quot;:&quot;&quot;,&quot;path&quot;:&quot;/api/recipe/1&quot;}&#10;&#10;Please find below the output of your program during this failed test.&#10;&#10;---&#10;&#10;&#10;  .   ____          _            __ _ _&#10; /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \&#10;( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \&#10; \\/  ___)| |_)| | | | | || (_| |  ) ) ) )&#10;  '  |____| .__|_| |_|_| |_\__, | / / / /&#10; =========|_|==============|___/=/_/_/_/&#10; :: Spring Boot ::        (v2.3.1.RELEASE)&#10;&#10;2021-07-16 21:54:03.736  INFO 12048 --- [    Test worker] recipes.RecipesApplication               : Starting RecipesApplication on LAPTOP-PRCAS73I with PID 12048 (started by adask in C:\Users\adask\Recipes\Recipes\task)&#10;2021-07-16 21:54:03.737  INFO 12048 --- [    Test worker] recipes.RecipesApplication               : No active profile set, falling back to default profiles: default&#10;2021-07-16 21:54:04.898  INFO 12048 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.&#10;2021-07-16 21:54:04.977  INFO 12048 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54ms. Found 1 JPA repository interfaces.&#10;2021-07-16 21:54:05.884  INFO 12048 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8881 (http)&#10;2021-07-16 21:54:05.900  INFO 12048 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]&#10;2021-07-16 21:54:05.916  INFO 12048 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]&#10;2021-07-16 21:54:06.056  INFO 12048 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext&#10;2021-07-16 21:54:06.056  INFO 12048 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2266 ms&#10;2021-07-16 21:54:06.213  INFO 12048 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...&#10;2021-07-16 21:54:06.452  INFO 12048 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.&#10;2021-07-16 21:54:06.452  INFO 12048 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:../recipes_db'&#10;2021-07-16 21:54:06.631  INFO 12048 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'&#10;2021-07-16 21:54:06.694  INFO 12048 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]&#10;2021-07-16 21:54:06.758  WARN 12048 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning&#10;2021-07-16 21:54:06.789  INFO 12048 --- [         task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.17.Final&#10;2021-07-16 21:54:07.023  INFO 12048 --- [         task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}&#10;2021-07-16 21:54:07.226  INFO 12048 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect&#10;Hibernate: create table recipe (id integer not null, category varchar(255), date timestamp, description varchar(255), name varchar(255), primary key (id))&#10;Hibernate: create table recipe_directions (recipe_id integer not null, directions varchar(255))&#10;Hibernate: create table recipe_ingredients (recipe_id integer not null, ingredients varchar(255))&#10;Hibernate: create sequence hibernate_sequence start with 1 increment by 1&#10;Hibernate: alter table recipe_directions add constraint FKkopnyxdjmwwlt5vlvw4rd28gy foreign key (recipe_id) references recipe&#10;Hibernate: alter table recipe_ingredients add constraint FKhnsmvxdlwxqq6x2wbgnoef5gr foreign key (recipe_id) references recipe&#10;2021-07-16 21:54:08.265  INFO 12048 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]&#10;2021-07-16 21:54:08.280  INFO 12048 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'&#10;2021-07-16 21:54:08.343  INFO 12048 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'&#10;2021-07-16 21:54:08.421  INFO 12048 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8881 (http) with context path ''&#10;2021-07-16 21:54:08.421  INFO 12048 --- [    Test worker] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…&#10;2021-07-16 21:54:08.671  INFO 12048 --- [    Test worker] DeferredRepositoryInitializationListener : Spring Data repositories initialized!&#10;2021-07-16 21:54:08.686  INFO 12048 --- [    Test worker] recipes.RecipesApplication               : Started RecipesApplication in 5.406 seconds (JVM running for 6.33)&#10;2021-07-16 21:54:09.083  INFO 12048 --- [nio-8881-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'&#10;2021-07-16 21:54:09.083  INFO 12048 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'&#10;2021-07-16 21:54:09.099  INFO 12048 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms&#10;Hibernate: call next value for hibernate_sequence&#10;Hibernate: insert into recipe (category, date, description, name, id) values (?, ?, ?, ?, ?)&#10;Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)&#10;Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)&#10;Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)&#10;Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)&#10;Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)&#10;Hibernate: insert into recipe_ingredients (recipe_id, ingredients) values (?, ?)&#10;Hibernate: insert into recipe_ingredients (recipe_id, ingredients) values (?, ?)&#10;Hibernate: insert into recipe_ingredients (recipe_id, ingredients) values (?, ?)&#10;Hibernate: call next value for hibernate_sequence&#10;Hibernate: insert into recipe (category, date, description, name, id) values (?, ?, ?, ?, ?)&#10;Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)&#10;Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)&#10;Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)&#10;Hibernate: insert into recipe_ingredients (recipe_id, ingredients) values (?, ?)&#10;Hibernate: insert into recipe_ingredients (recipe_id, ingredients) values (?, ?)&#10;Hibernate: insert into recipe_ingredients (recipe_id, ingredients) values (?, ?)&#10;Hibernate: select recipe0_.id as id1_0_0_, recipe0_.category as category2_0_0_, recipe0_.date as date3_0_0_, recipe0_.description as descript4_0_0_, recipe0_.name as name5_0_0_ from recipe recipe0_ where recipe0_.id=?&#10;Hibernate: select ingredient0_.recipe_id as recipe_i1_2_0_, ingredient0_.ingredients as ingredie2_2_0_ from recipe_ingredients ingredient0_ where ingredient0_.recipe_id=?&#10;Hibernate: select directions0_.recipe_id as recipe_i1_1_0_, directions0_.directions as directio2_1_0_ from recipe_directions directions0_ where directions0_.recipe_id=?&#10;Hibernate: select recipe0_.id as id1_0_0_, recipe0_.category as category2_0_0_, recipe0_.date as date3_0_0_, recipe0_.description as descript4_0_0_, recipe0_.name as name5_0_0_ from recipe recipe0_ where recipe0_.id=?&#10;Hibernate: select ingredient0_.recipe_id as recipe_i1_2_0_, ingredient0_.ingredients as ingredie2_2_0_ from recipe_ingredients ingredient0_ where ingredient0_.recipe_id=?&#10;Hibernate: select directions0_.recipe_id as recipe_i1_1_0_, directions0_.directions as directio2_1_0_ from recipe_directions directions0_ where directions0_.recipe_id=?&#10;2021-07-16 21:54:10.082  INFO 12048 --- [     Thread-316] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'&#10;2021-07-16 21:54:10.098  INFO 12048 --- [     Thread-316] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'&#10;2021-07-16 21:54:10.098  INFO 12048 --- [     Thread-316] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...&#10;2021-07-16 21:54:10.120  INFO 12048 --- [     Thread-316] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.&#10;&#10;  .   ____          _            __ _ _&#10; /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \&#10;( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \&#10; \\/  ___)| |_)| | | | | || (_| |  ) ) ) )&#10;  '  |____| .__|_| |_|_| |_\__, | / / / /&#10; =========|_|==============|___/=/_/_/_/&#10; :: Spring Boot ::        (v2.3.1.RELEASE)&#10;&#10;2021-07-16 21:54:10.182  INFO 12048 --- [    Test worker] recipes.RecipesApplication               : Starting RecipesApplication on LAPTOP-PRCAS73I with PID 12048 (started by adask in C:\Users\adask\Recipes\Recipes\task)&#10;2021-07-16 21:54:10.182  INFO 12048 --- [    Test worker] recipes.RecipesApplication               : No active profile set, falling back to default profiles: default&#10;2021-07-16 21:54:10.659  INFO 12048 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.&#10;2021-07-16 21:54:10.659  INFO 12048 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8ms. Found 1 JPA repository interfaces.&#10;2021-07-16 21:54:10.778  INFO 12048 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8881 (http)&#10;2021-07-16 21:54:10.778  INFO 12048 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]&#10;2021-07-16 21:54:10.778  INFO 12048 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]&#10;2021-07-16 21:54:10.809  INFO 12048 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext&#10;2021-07-16 21:54:10.809  INFO 12048 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 627 ms&#10;2021-07-16 21:54:10.856  INFO 12048 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...&#10;2021-07-16 21:54:10.871  INFO 12048 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.&#10;2021-07-16 21:54:10.871  INFO 12048 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:../recipes_db'&#10;2021-07-16 21:54:10.934  INFO 12048 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'&#10;2021-07-16 21:54:10.934  INFO 12048 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]&#10;2021-07-16 21:54:10.950  INFO 12048 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect&#10;2021-07-16 21:54:10.981  WARN 12048 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning&#10;2021-07-16 21:54:11.059  INFO 12048 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]&#10;2021-07-16 21:54:11.059  INFO 12048 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'&#10;2021-07-16 21:54:11.249  INFO 12048 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'&#10;2021-07-16 21:54:11.265  INFO 12048 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8881 (http) with context path ''&#10;2021-07-16 21:54:11.265  INFO 12048 --- [    Test worker] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…&#10;2021-07-16 21:54:11.296  INFO 12048 --- [    Test worker] DeferredRepositoryInitializationListener : Spring Data repositories initialized!&#10;2021-07-16 21:54:11.311  INFO 12048 --- [    Test worker] recipes.RecipesApplication               : Started RecipesApplication in 1.16 seconds (JVM running for 8.949)&#10;2021-07-16 21:54:11.311  INFO 12048 --- [nio-8881-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'&#10;2021-07-16 21:54:11.311  INFO 12048 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'&#10;2021-07-16 21:54:11.327  INFO 12048 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms&#10;Hibernate: select recipe0_.id as id1_0_0_, recipe0_.category as category2_0_0_, recipe0_.date as date3_0_0_, recipe0_.description as descript4_0_0_, recipe0_.name as name5_0_0_ from recipe recipe0_ where recipe0_.id=?&#10;Hibernate: select ingredient0_.recipe_id as recipe_i1_2_0_, ingredient0_.ingredients as ingredie2_2_0_ from recipe_ingredients ingredient0_ where ingredient0_.recipe_id=?&#10;Hibernate: select directions0_.recipe_id as recipe_i1_1_0_, directions0_.directions as directio2_1_0_ from recipe_directions directions0_ where directions0_.recipe_id=?&#10;Hibernate: select recipe0_.id as id1_0_0_, recipe0_.category as category2_0_0_, recipe0_.date as date3_0_0_, recipe0_.description as descript4_0_0_, recipe0_.name as name5_0_0_ from recipe recipe0_ where recipe0_.id=?&#10;Hibernate: select ingredient0_.recipe_id as recipe_i1_2_0_, ingredient0_.ingredients as ingredie2_2_0_ from recipe_ingredients ingredient0_ where ingredient0_.recipe_id=?&#10;Hibernate: select directions0_.recipe_id as recipe_i1_1_0_, directions0_.directions as directio2_1_0_ from recipe_directions directions0_ where directions0_.recipe_id=?&#10;Hibernate: select count(*) as col_0_0_ from recipe recipe0_ where recipe0_.id=?&#10;Hibernate: select recipe0_.id as id1_0_0_, recipe0_.category as category2_0_0_, recipe0_.date as date3_0_0_, recipe0_.description as descript4_0_0_, recipe0_.name as name5_0_0_ from recipe recipe0_ where recipe0_.id=?&#10;Hibernate: delete from recipe_directions where recipe_id=?&#10;Hibernate: delete from recipe_ingredients where recipe_id=?&#10;Hibernate: delete from recipe where id=?&#10;Hibernate: call next value for hibernate_sequence&#10;Hibernate: insert into recipe (category, date, description, name, id) values (?, ?, ?, ?, ?)&#10;Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)&#10;Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)&#10;Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)&#10;Hibernate: insert into recipe_ingredients (recipe_id, ingredients) values (?, ?)&#10;Hibernate: insert into recipe_ingredients (recipe_id, ingredients) values (?, ?)&#10;Hibernate: insert into recipe_ingredients (recipe_id, ingredients) values (?, ?)&#10;Hibernate: select recipe0_.id as id1_0_0_, recipe0_.category as category2_0_0_, recipe0_.date as date3_0_0_, recipe0_.description as descript4_0_0_, recipe0_.name as name5_0_0_ from recipe recipe0_ where recipe0_.id=?" type="java.lang.AssertionError">java.lang.AssertionError: Wrong answer in test #9
+
+GET /api/recipe/1 should respond with status code 200, responded: 404
+
+Response body:
+{&quot;timestamp&quot;:&quot;2021-07-16T19:54:11.573+00:00&quot;,&quot;status&quot;:404,&quot;error&quot;:&quot;Not Found&quot;,&quot;message&quot;:&quot;&quot;,&quot;path&quot;:&quot;/api/recipe/1&quot;}
+
+Please find below the output of your program during this failed test.
+
+---
+
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.3.1.RELEASE)
+
+2021-07-16 21:54:03.736  INFO 12048 --- [    Test worker] recipes.RecipesApplication               : Starting RecipesApplication on LAPTOP-PRCAS73I with PID 12048 (started by adask in C:\Users\adask\Recipes\Recipes\task)
+2021-07-16 21:54:03.737  INFO 12048 --- [    Test worker] recipes.RecipesApplication               : No active profile set, falling back to default profiles: default
+2021-07-16 21:54:04.898  INFO 12048 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-07-16 21:54:04.977  INFO 12048 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54ms. Found 1 JPA repository interfaces.
+2021-07-16 21:54:05.884  INFO 12048 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8881 (http)
+2021-07-16 21:54:05.900  INFO 12048 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-16 21:54:05.916  INFO 12048 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2021-07-16 21:54:06.056  INFO 12048 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-16 21:54:06.056  INFO 12048 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2266 ms
+2021-07-16 21:54:06.213  INFO 12048 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-16 21:54:06.452  INFO 12048 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-16 21:54:06.452  INFO 12048 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:../recipes_db'
+2021-07-16 21:54:06.631  INFO 12048 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-16 21:54:06.694  INFO 12048 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-16 21:54:06.758  WARN 12048 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-07-16 21:54:06.789  INFO 12048 --- [         task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.17.Final
+2021-07-16 21:54:07.023  INFO 12048 --- [         task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-07-16 21:54:07.226  INFO 12048 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+Hibernate: create table recipe (id integer not null, category varchar(255), date timestamp, description varchar(255), name varchar(255), primary key (id))
+Hibernate: create table recipe_directions (recipe_id integer not null, directions varchar(255))
+Hibernate: create table recipe_ingredients (recipe_id integer not null, ingredients varchar(255))
+Hibernate: create sequence hibernate_sequence start with 1 increment by 1
+Hibernate: alter table recipe_directions add constraint FKkopnyxdjmwwlt5vlvw4rd28gy foreign key (recipe_id) references recipe
+Hibernate: alter table recipe_ingredients add constraint FKhnsmvxdlwxqq6x2wbgnoef5gr foreign key (recipe_id) references recipe
+2021-07-16 21:54:08.265  INFO 12048 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-16 21:54:08.280  INFO 12048 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-16 21:54:08.343  INFO 12048 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2021-07-16 21:54:08.421  INFO 12048 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8881 (http) with context path ''
+2021-07-16 21:54:08.421  INFO 12048 --- [    Test worker] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2021-07-16 21:54:08.671  INFO 12048 --- [    Test worker] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2021-07-16 21:54:08.686  INFO 12048 --- [    Test worker] recipes.RecipesApplication               : Started RecipesApplication in 5.406 seconds (JVM running for 6.33)
+2021-07-16 21:54:09.083  INFO 12048 --- [nio-8881-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-16 21:54:09.083  INFO 12048 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-16 21:54:09.099  INFO 12048 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into recipe (category, date, description, name, id) values (?, ?, ?, ?, ?)
+Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)
+Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)
+Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)
+Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)
+Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)
+Hibernate: insert into recipe_ingredients (recipe_id, ingredients) values (?, ?)
+Hibernate: insert into recipe_ingredients (recipe_id, ingredients) values (?, ?)
+Hibernate: insert into recipe_ingredients (recipe_id, ingredients) values (?, ?)
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into recipe (category, date, description, name, id) values (?, ?, ?, ?, ?)
+Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)
+Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)
+Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)
+Hibernate: insert into recipe_ingredients (recipe_id, ingredients) values (?, ?)
+Hibernate: insert into recipe_ingredients (recipe_id, ingredients) values (?, ?)
+Hibernate: insert into recipe_ingredients (recipe_id, ingredients) values (?, ?)
+Hibernate: select recipe0_.id as id1_0_0_, recipe0_.category as category2_0_0_, recipe0_.date as date3_0_0_, recipe0_.description as descript4_0_0_, recipe0_.name as name5_0_0_ from recipe recipe0_ where recipe0_.id=?
+Hibernate: select ingredient0_.recipe_id as recipe_i1_2_0_, ingredient0_.ingredients as ingredie2_2_0_ from recipe_ingredients ingredient0_ where ingredient0_.recipe_id=?
+Hibernate: select directions0_.recipe_id as recipe_i1_1_0_, directions0_.directions as directio2_1_0_ from recipe_directions directions0_ where directions0_.recipe_id=?
+Hibernate: select recipe0_.id as id1_0_0_, recipe0_.category as category2_0_0_, recipe0_.date as date3_0_0_, recipe0_.description as descript4_0_0_, recipe0_.name as name5_0_0_ from recipe recipe0_ where recipe0_.id=?
+Hibernate: select ingredient0_.recipe_id as recipe_i1_2_0_, ingredient0_.ingredients as ingredie2_2_0_ from recipe_ingredients ingredient0_ where ingredient0_.recipe_id=?
+Hibernate: select directions0_.recipe_id as recipe_i1_1_0_, directions0_.directions as directio2_1_0_ from recipe_directions directions0_ where directions0_.recipe_id=?
+2021-07-16 21:54:10.082  INFO 12048 --- [     Thread-316] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-07-16 21:54:10.098  INFO 12048 --- [     Thread-316] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-16 21:54:10.098  INFO 12048 --- [     Thread-316] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-07-16 21:54:10.120  INFO 12048 --- [     Thread-316] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.3.1.RELEASE)
+
+2021-07-16 21:54:10.182  INFO 12048 --- [    Test worker] recipes.RecipesApplication               : Starting RecipesApplication on LAPTOP-PRCAS73I with PID 12048 (started by adask in C:\Users\adask\Recipes\Recipes\task)
+2021-07-16 21:54:10.182  INFO 12048 --- [    Test worker] recipes.RecipesApplication               : No active profile set, falling back to default profiles: default
+2021-07-16 21:54:10.659  INFO 12048 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-07-16 21:54:10.659  INFO 12048 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8ms. Found 1 JPA repository interfaces.
+2021-07-16 21:54:10.778  INFO 12048 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8881 (http)
+2021-07-16 21:54:10.778  INFO 12048 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-16 21:54:10.778  INFO 12048 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2021-07-16 21:54:10.809  INFO 12048 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-16 21:54:10.809  INFO 12048 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 627 ms
+2021-07-16 21:54:10.856  INFO 12048 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2021-07-16 21:54:10.871  INFO 12048 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2021-07-16 21:54:10.871  INFO 12048 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:../recipes_db'
+2021-07-16 21:54:10.934  INFO 12048 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-16 21:54:10.934  INFO 12048 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-16 21:54:10.950  INFO 12048 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-16 21:54:10.981  WARN 12048 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-07-16 21:54:11.059  INFO 12048 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-16 21:54:11.059  INFO 12048 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-16 21:54:11.249  INFO 12048 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2021-07-16 21:54:11.265  INFO 12048 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8881 (http) with context path ''
+2021-07-16 21:54:11.265  INFO 12048 --- [    Test worker] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2021-07-16 21:54:11.296  INFO 12048 --- [    Test worker] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2021-07-16 21:54:11.311  INFO 12048 --- [    Test worker] recipes.RecipesApplication               : Started RecipesApplication in 1.16 seconds (JVM running for 8.949)
+2021-07-16 21:54:11.311  INFO 12048 --- [nio-8881-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-16 21:54:11.311  INFO 12048 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-16 21:54:11.327  INFO 12048 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
+Hibernate: select recipe0_.id as id1_0_0_, recipe0_.category as category2_0_0_, recipe0_.date as date3_0_0_, recipe0_.description as descript4_0_0_, recipe0_.name as name5_0_0_ from recipe recipe0_ where recipe0_.id=?
+Hibernate: select ingredient0_.recipe_id as recipe_i1_2_0_, ingredient0_.ingredients as ingredie2_2_0_ from recipe_ingredients ingredient0_ where ingredient0_.recipe_id=?
+Hibernate: select directions0_.recipe_id as recipe_i1_1_0_, directions0_.directions as directio2_1_0_ from recipe_directions directions0_ where directions0_.recipe_id=?
+Hibernate: select recipe0_.id as id1_0_0_, recipe0_.category as category2_0_0_, recipe0_.date as date3_0_0_, recipe0_.description as descript4_0_0_, recipe0_.name as name5_0_0_ from recipe recipe0_ where recipe0_.id=?
+Hibernate: select ingredient0_.recipe_id as recipe_i1_2_0_, ingredient0_.ingredients as ingredie2_2_0_ from recipe_ingredients ingredient0_ where ingredient0_.recipe_id=?
+Hibernate: select directions0_.recipe_id as recipe_i1_1_0_, directions0_.directions as directio2_1_0_ from recipe_directions directions0_ where directions0_.recipe_id=?
+Hibernate: select count(*) as col_0_0_ from recipe recipe0_ where recipe0_.id=?
+Hibernate: select recipe0_.id as id1_0_0_, recipe0_.category as category2_0_0_, recipe0_.date as date3_0_0_, recipe0_.description as descript4_0_0_, recipe0_.name as name5_0_0_ from recipe recipe0_ where recipe0_.id=?
+Hibernate: delete from recipe_directions where recipe_id=?
+Hibernate: delete from recipe_ingredients where recipe_id=?
+Hibernate: delete from recipe where id=?
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into recipe (category, date, description, name, id) values (?, ?, ?, ?, ?)
+Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)
+Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)
+Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)
+Hibernate: insert into recipe_ingredients (recipe_id, ingredients) values (?, ?)
+Hibernate: insert into recipe_ingredients (recipe_id, ingredients) values (?, ?)
+Hibernate: insert into recipe_ingredients (recipe_id, ingredients) values (?, ?)
+Hibernate: select recipe0_.id as id1_0_0_, recipe0_.category as category2_0_0_, recipe0_.date as date3_0_0_, recipe0_.description as descript4_0_0_, recipe0_.name as name5_0_0_ from recipe recipe0_ where recipe0_.id=?
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.hyperskill.hstest.stage.StageTest.start(StageTest.java:141)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:119)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:414)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+</failure>
+  </testcase>
+  <system-out><![CDATA[?[1;31m
+Start test 1?[0m
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.3.1.RELEASE)
+
+2021-07-16 21:54:03.736  INFO 12048 --- [    Test worker] recipes.RecipesApplication               : Starting RecipesApplication on LAPTOP-PRCAS73I with PID 12048 (started by adask in C:\Users\adask\Recipes\Recipes\task)
+2021-07-16 21:54:03.737  INFO 12048 --- [    Test worker] recipes.RecipesApplication               : No active profile set, falling back to default profiles: default
+2021-07-16 21:54:04.898  INFO 12048 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-07-16 21:54:04.977  INFO 12048 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54ms. Found 1 JPA repository interfaces.
+2021-07-16 21:54:05.884  INFO 12048 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8881 (http)
+2021-07-16 21:54:05.900  INFO 12048 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-16 21:54:05.916  INFO 12048 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2021-07-16 21:54:06.056  INFO 12048 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-16 21:54:06.056  INFO 12048 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2266 ms
+2021-07-16 21:54:06.213  INFO 12048 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-16 21:54:06.452  INFO 12048 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-16 21:54:06.452  INFO 12048 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:../recipes_db'
+2021-07-16 21:54:06.631  INFO 12048 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-16 21:54:06.694  INFO 12048 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-16 21:54:06.758  WARN 12048 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-07-16 21:54:06.789  INFO 12048 --- [         task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.17.Final
+2021-07-16 21:54:07.023  INFO 12048 --- [         task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-07-16 21:54:07.226  INFO 12048 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+Hibernate: create table recipe (id integer not null, category varchar(255), date timestamp, description varchar(255), name varchar(255), primary key (id))
+Hibernate: create table recipe_directions (recipe_id integer not null, directions varchar(255))
+Hibernate: create table recipe_ingredients (recipe_id integer not null, ingredients varchar(255))
+Hibernate: create sequence hibernate_sequence start with 1 increment by 1
+Hibernate: alter table recipe_directions add constraint FKkopnyxdjmwwlt5vlvw4rd28gy foreign key (recipe_id) references recipe
+Hibernate: alter table recipe_ingredients add constraint FKhnsmvxdlwxqq6x2wbgnoef5gr foreign key (recipe_id) references recipe
+2021-07-16 21:54:08.265  INFO 12048 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-16 21:54:08.280  INFO 12048 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-16 21:54:08.343  INFO 12048 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2021-07-16 21:54:08.421  INFO 12048 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8881 (http) with context path ''
+2021-07-16 21:54:08.421  INFO 12048 --- [    Test worker] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2021-07-16 21:54:08.671  INFO 12048 --- [    Test worker] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2021-07-16 21:54:08.686  INFO 12048 --- [    Test worker] recipes.RecipesApplication               : Started RecipesApplication in 5.406 seconds (JVM running for 6.33)
+2021-07-16 21:54:09.083  INFO 12048 --- [nio-8881-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-16 21:54:09.083  INFO 12048 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-16 21:54:09.099  INFO 12048 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into recipe (category, date, description, name, id) values (?, ?, ?, ?, ?)
+Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)
+Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)
+Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)
+Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)
+Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)
+Hibernate: insert into recipe_ingredients (recipe_id, ingredients) values (?, ?)
+Hibernate: insert into recipe_ingredients (recipe_id, ingredients) values (?, ?)
+Hibernate: insert into recipe_ingredients (recipe_id, ingredients) values (?, ?)
+?[1;31m
+Start test 2?[0m
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into recipe (category, date, description, name, id) values (?, ?, ?, ?, ?)
+Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)
+Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)
+Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)
+Hibernate: insert into recipe_ingredients (recipe_id, ingredients) values (?, ?)
+Hibernate: insert into recipe_ingredients (recipe_id, ingredients) values (?, ?)
+Hibernate: insert into recipe_ingredients (recipe_id, ingredients) values (?, ?)
+?[1;31m
+Start test 3?[0m
+Hibernate: select recipe0_.id as id1_0_0_, recipe0_.category as category2_0_0_, recipe0_.date as date3_0_0_, recipe0_.description as descript4_0_0_, recipe0_.name as name5_0_0_ from recipe recipe0_ where recipe0_.id=?
+Hibernate: select ingredient0_.recipe_id as recipe_i1_2_0_, ingredient0_.ingredients as ingredie2_2_0_ from recipe_ingredients ingredient0_ where ingredient0_.recipe_id=?
+Hibernate: select directions0_.recipe_id as recipe_i1_1_0_, directions0_.directions as directio2_1_0_ from recipe_directions directions0_ where directions0_.recipe_id=?
+?[1;31m
+Start test 4?[0m
+Hibernate: select recipe0_.id as id1_0_0_, recipe0_.category as category2_0_0_, recipe0_.date as date3_0_0_, recipe0_.description as descript4_0_0_, recipe0_.name as name5_0_0_ from recipe recipe0_ where recipe0_.id=?
+Hibernate: select ingredient0_.recipe_id as recipe_i1_2_0_, ingredient0_.ingredients as ingredie2_2_0_ from recipe_ingredients ingredient0_ where ingredient0_.recipe_id=?
+Hibernate: select directions0_.recipe_id as recipe_i1_1_0_, directions0_.directions as directio2_1_0_ from recipe_directions directions0_ where directions0_.recipe_id=?
+?[1;31m
+Start test 5?[0m
+2021-07-16 21:54:10.082  INFO 12048 --- [     Thread-316] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-07-16 21:54:10.098  INFO 12048 --- [     Thread-316] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-07-16 21:54:10.098  INFO 12048 --- [     Thread-316] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-07-16 21:54:10.120  INFO 12048 --- [     Thread-316] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.3.1.RELEASE)
+
+2021-07-16 21:54:10.182  INFO 12048 --- [    Test worker] recipes.RecipesApplication               : Starting RecipesApplication on LAPTOP-PRCAS73I with PID 12048 (started by adask in C:\Users\adask\Recipes\Recipes\task)
+2021-07-16 21:54:10.182  INFO 12048 --- [    Test worker] recipes.RecipesApplication               : No active profile set, falling back to default profiles: default
+2021-07-16 21:54:10.659  INFO 12048 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-07-16 21:54:10.659  INFO 12048 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8ms. Found 1 JPA repository interfaces.
+2021-07-16 21:54:10.778  INFO 12048 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8881 (http)
+2021-07-16 21:54:10.778  INFO 12048 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-16 21:54:10.778  INFO 12048 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2021-07-16 21:54:10.809  INFO 12048 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-16 21:54:10.809  INFO 12048 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 627 ms
+2021-07-16 21:54:10.856  INFO 12048 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2021-07-16 21:54:10.871  INFO 12048 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2021-07-16 21:54:10.871  INFO 12048 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:../recipes_db'
+2021-07-16 21:54:10.934  INFO 12048 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-07-16 21:54:10.934  INFO 12048 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-16 21:54:10.950  INFO 12048 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-16 21:54:10.981  WARN 12048 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-07-16 21:54:11.059  INFO 12048 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-16 21:54:11.059  INFO 12048 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-16 21:54:11.249  INFO 12048 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2021-07-16 21:54:11.265  INFO 12048 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8881 (http) with context path ''
+2021-07-16 21:54:11.265  INFO 12048 --- [    Test worker] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2021-07-16 21:54:11.296  INFO 12048 --- [    Test worker] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2021-07-16 21:54:11.311  INFO 12048 --- [    Test worker] recipes.RecipesApplication               : Started RecipesApplication in 1.16 seconds (JVM running for 8.949)
+?[1;31m
+Start test 6?[0m
+2021-07-16 21:54:11.311  INFO 12048 --- [nio-8881-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-16 21:54:11.311  INFO 12048 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-16 21:54:11.327  INFO 12048 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
+Hibernate: select recipe0_.id as id1_0_0_, recipe0_.category as category2_0_0_, recipe0_.date as date3_0_0_, recipe0_.description as descript4_0_0_, recipe0_.name as name5_0_0_ from recipe recipe0_ where recipe0_.id=?
+Hibernate: select ingredient0_.recipe_id as recipe_i1_2_0_, ingredient0_.ingredients as ingredie2_2_0_ from recipe_ingredients ingredient0_ where ingredient0_.recipe_id=?
+Hibernate: select directions0_.recipe_id as recipe_i1_1_0_, directions0_.directions as directio2_1_0_ from recipe_directions directions0_ where directions0_.recipe_id=?
+?[1;31m
+Start test 7?[0m
+Hibernate: select recipe0_.id as id1_0_0_, recipe0_.category as category2_0_0_, recipe0_.date as date3_0_0_, recipe0_.description as descript4_0_0_, recipe0_.name as name5_0_0_ from recipe recipe0_ where recipe0_.id=?
+Hibernate: select ingredient0_.recipe_id as recipe_i1_2_0_, ingredient0_.ingredients as ingredie2_2_0_ from recipe_ingredients ingredient0_ where ingredient0_.recipe_id=?
+Hibernate: select directions0_.recipe_id as recipe_i1_1_0_, directions0_.directions as directio2_1_0_ from recipe_directions directions0_ where directions0_.recipe_id=?
+?[1;31m
+Start test 8?[0m
+Hibernate: select count(*) as col_0_0_ from recipe recipe0_ where recipe0_.id=?
+Hibernate: select recipe0_.id as id1_0_0_, recipe0_.category as category2_0_0_, recipe0_.date as date3_0_0_, recipe0_.description as descript4_0_0_, recipe0_.name as name5_0_0_ from recipe recipe0_ where recipe0_.id=?
+Hibernate: delete from recipe_directions where recipe_id=?
+Hibernate: delete from recipe_ingredients where recipe_id=?
+Hibernate: delete from recipe where id=?
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into recipe (category, date, description, name, id) values (?, ?, ?, ?, ?)
+Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)
+Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)
+Hibernate: insert into recipe_directions (recipe_id, directions) values (?, ?)
+Hibernate: insert into recipe_ingredients (recipe_id, ingredients) values (?, ?)
+Hibernate: insert into recipe_ingredients (recipe_id, ingredients) values (?, ?)
+Hibernate: insert into recipe_ingredients (recipe_id, ingredients) values (?, ?)
+?[1;31m
+Start test 9?[0m
+Hibernate: select recipe0_.id as id1_0_0_, recipe0_.category as category2_0_0_, recipe0_.date as date3_0_0_, recipe0_.description as descript4_0_0_, recipe0_.name as name5_0_0_ from recipe recipe0_ where recipe0_.id=?
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

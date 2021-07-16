@@ -1,0 +1,8 @@
+recipes/RecipesApplication.java
+ recipes.RecipesApplication
+recipes/business/Recipe.java
+ recipes.business.Recipe
+recipes/presentation/RecipeController.java
+ recipes.presentation.RecipeController
+recipes/persistence/RecipeRepository.java
+ recipes.persistence.RecipeRepository
