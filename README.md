@@ -1,5 +1,5 @@
 # Recipes
 
-It is a web service based on Spring Boot that allows storing, deleting, retrieving and updating recipes.
+ A web service based on Spring Boot that allows storing, deleting, retrieving and updating recipes.
 
 Spring Boot, JSON, REST API, H2 database
